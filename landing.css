@@ -103,3 +103,9 @@ h2{
   font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
   border-radius: 0 0 10px 10px;
 }
+.category-wrapper img {
+  width: 100%;        /* 寬度不超過父層容器的寬度 */
+  height: 200px;       /* 固定高度,讓每張卡片圖片一樣高,整齊 */
+  object-fit: cover;   /* 關鍵!圖片會裁切填滿,不會變形 */
+  border-radius: 8px;
+}

@@ -3,6 +3,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center ;
+    position: relative;
+  
+
 }
 
 .box {
@@ -45,47 +48,58 @@ h2{
   text-align: center;
 }
 
-.product-section h3 {
+.category-wrapper h3 {
   text-align: center;
   color: aliceblue;
   font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
   margin-bottom: 20px;
 }
 
-.product-list {
+.category-container {
+  position: relative;
   display: flex;
-  flex-wrap: wrap;          /* 排不下會自動換行,這是重點 */
-  justify-content: center;  /* 卡片群整體置中 */
-  gap: 20px;
-  padding: 0 40px 40px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px;
 }
 
-.product-card {
-  flex: 1 1 250px;          /* 最小寬度 250px,可以伸縮填滿空間 */
-  max-width: 300px;         /* 但最寬不超過 300px,避免螢幕太寬時卡片被拉太大 */
-  background: rgba(255, 255, 255, 0.15);
+.category-glass {
+  position: relative;
+  width: 150px;
+  height: 170px;
+  background: linear-gradient(rgba(255,255,255,0.13), transparent);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  border-radius: 10px;
+  margin: 0 -40px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid #eeeded86;
-  border-radius: 12px;
-  padding: 12px;
-  text-align: center;
+  transform: rotate(calc(var(--r) * 1deg));
+  font-size: 3em;
+  cursor: pointer;
 }
 
-.product-card img {
+.category-container:hover .category-glass {
+  transform: rotate(0deg);
+  margin: 0 10px;
+}
+
+.category-glass::before {
+  content: attr(data-text);
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  border-radius: 8px;
-  margin-bottom: 8px;
-}
-
-.product-card h4 {
-  color: aliceblue;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 16px;
   font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-  margin: 8px 0 4px;
-}
-
-.product-card .price {
-  color: aliceblue;
-  font-weight: bold;
-  opacity: 1;
+  border-radius: 0 0 10px 10px;
 }

@@ -1,0 +1,91 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+}
+
+.box {
+  width: 80%;
+  padding: 12px 24px;
+  border: 1px solid #eeeded86;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-bottom: 1%;
+  font-weight: 400;
+}
+
+.box:hover {
+  background: rgba(255, 255, 255, 0.25);           /* hover 時稍微變亮,增加互動感 */
+}
+body {
+  background: linear-gradient(135deg, #749694 0%, #d3d1d4 100%);
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  
+}
+h2{
+    text-align: center;
+    padding: 0 20px;
+    color:aliceblue;
+    margin-bottom: 40px;
+}
+.subtitle{
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  color: aliceblue;
+  font-size: 18px;
+  opacity: 0.9;   /* 讓它視覺上比標題稍微弱一點,製造層次 */
+  text-align: center;
+}
+
+.product-section h3 {
+  text-align: center;
+  color: aliceblue;
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  margin-bottom: 20px;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;          /* 排不下會自動換行,這是重點 */
+  justify-content: center;  /* 卡片群整體置中 */
+  gap: 20px;
+  padding: 0 40px 40px;
+}
+
+.product-card {
+  flex: 1 1 250px;          /* 最小寬度 250px,可以伸縮填滿空間 */
+  max-width: 300px;         /* 但最寬不超過 300px,避免螢幕太寬時卡片被拉太大 */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid #eeeded86;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.product-card h4 {
+  color: aliceblue;
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  margin: 8px 0 4px;
+}
+
+.product-card .price {
+  color: aliceblue;
+  font-weight: bold;
+  opacity: 1;
+}

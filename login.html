@@ -1,23 +1,66 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-    
 <head>
-  <meta charset="UTF-8">
-  <title>登入</title>
-  <link rel="stylesheet" href="login.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="login.css">
+    <title>登入｜輔大二手交易平台</title>
 </head>
-
 <body>
+    <main class="auth-page">
+        <a href="landing.html" class="back-link">← 返回首頁</a>
 
-  <div class="login-box">
-    <div class="box Introduction"><h2>Introduction</h2></div>
-    <div class="box Content">
-      <h2>comment</h2>
-        <!-- <div class="subcontent">商品圖片（假設是一隻小熊）</div>
-        <div class="subcontent">價格：NT$ 500</div> -->
-    </div>
-    <div class="box contact"><h2>Contact Us</h2></div>
-  </div>
+        <h2>輔大二手交易平台</h2>
+        <p class="subtitle">使用學校信箱註冊與登入</p>
 
+        <div class="auth-card">
+            <div class="auth-tabs">
+                <button type="button" class="auth-tab active" data-mode="login">登入</button>
+                <button type="button" class="auth-tab" data-mode="register">註冊</button>
+            </div>
+
+            <form id="auth-form" class="auth-form" novalidate>
+                <label for="email">學校信箱</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="yourname@go.fju.edu.tw"
+                    autocomplete="email"
+                    required
+                >
+
+                <label for="password">密碼</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="至少 8 個字元"
+                    autocomplete="current-password"
+                    minlength="8"
+                    required
+                >
+
+                <div id="confirm-password-group" class="hidden">
+                    <label for="confirm-password">確認密碼</label>
+                    <input
+                        type="password"
+                        id="confirm-password"
+                        name="confirm-password"
+                        placeholder="再次輸入密碼"
+                        autocomplete="new-password"
+                        minlength="8"
+                    >
+                </div>
+
+                <p id="form-message" class="form-message" aria-live="polite"></p>
+
+                <button type="submit" class="box auth-submit">登入</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="login.js" defer></script>
 </body>
 </html>
